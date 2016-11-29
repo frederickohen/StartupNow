@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialTableViewController.swift
 //  StartupNow
 //
 //  Created by Fredrick Ohen on 11/29/16.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitialTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Hides unused cells
+        tableView.tableFooterView = UIView()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +25,5 @@ class ViewController: UIViewController {
     }
 
 
-}
 
+}
