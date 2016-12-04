@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>375841550555-ldodm99pj64qd7jvl343lb16qsdvqvdo.apps.googleusercontent.com</string>
+	<string>864600728338-mu7avt37gee201v5nnd264iarkcu68k6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.375841550555-ldodm99pj64qd7jvl343lb16qsdvqvdo</string>
+	<string>com.googleusercontent.apps.864600728338-mu7avt37gee201v5nnd264iarkcu68k6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB5ulyEn_3E4_rYBV5u1nho7wdKlVJImKM</string>
+	<string>AIzaSyAP1f5Vqe93OZG28rPTbUvI0gfdlnfJGxs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>375841550555</string>
+	<string>864600728338</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.geeoku.StartupNow</string>
 	<key>PROJECT_ID</key>
-	<string>startupnow-58694</string>
+	<string>startupnow-c3dab</string>
 	<key>STORAGE_BUCKET</key>
-	<string>startupnow-58694.appspot.com</string>
+	<string>startupnow-c3dab.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:375841550555:ios:c19606472ec0726e</string>
+	<string>1:864600728338:ios:c19606472ec0726e</string>
 	<key>DATABASE_URL</key>
-	<string>https://startupnow-58694.firebaseio.com</string>
+	<string>https://startupnow-c3dab.firebaseio.com</string>
 </dict>
 </plist>

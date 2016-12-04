@@ -7,24 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F573CA61DEE0DDE00D9C2DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F573CA51DEE0DDE00D9C2DA /* GoogleService-Info.plist */; };
 		1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */; };
+		1F979DFC1DF1EE13009636E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */; };
+		1FAAD8821DEF33E200822310 /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAAD8811DEF33E200822310 /* Startup.swift */; };
 		1FCDA6F91DEE0D21009EF15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDA6F81DEE0D21009EF15C /* AppDelegate.swift */; };
 		1FCDA6FE1DEE0D21009EF15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDA6FC1DEE0D21009EF15C /* Main.storyboard */; };
 		1FCDA7001DEE0D21009EF15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDA6FF1DEE0D21009EF15C /* Assets.xcassets */; };
 		1FCDA7031DEE0D21009EF15C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDA7011DEE0D21009EF15C /* LaunchScreen.storyboard */; };
+		1FEB3BEE1DEE46CF00D96E96 /* StartupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB3BED1DEE46CF00D96E96 /* StartupInfoViewController.swift */; };
 		2A9916B8CDC3DF628142F42E /* Pods_StartupNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77A4CFB6E901D696287B52 /* Pods_StartupNow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F573CA51DEE0DDE00D9C2DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FAAD8811DEF33E200822310 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		1FCDA6F51DEE0D21009EF15C /* StartupNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartupNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCDA6F81DEE0D21009EF15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FCDA6FD1DEE0D21009EF15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FCDA6FF1DEE0D21009EF15C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FCDA7021DEE0D21009EF15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FCDA7041DEE0D21009EF15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEB3BED1DEE46CF00D96E96 /* StartupInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupInfoViewController.swift; sourceTree = "<group>"; };
 		3A77A4CFB6E901D696287B52 /* Pods_StartupNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartupNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA049D0CB99085D70C733F28 /* Pods-StartupNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartupNow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartupNow/Pods-StartupNow.debug.xcconfig"; sourceTree = "<group>"; };
 		AF547F201170EE32F6838A37 /* Pods-StartupNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartupNow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartupNow/Pods-StartupNow.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 		1F8B22181DEE1E9B00D82A76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1FAAD8811DEF33E200822310 /* Startup.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -71,6 +76,7 @@
 				1F8B22171DEE1E9500D82A76 /* View */,
 				1F8B22161DEE1E8D00D82A76 /* Controller */,
 				1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */,
+				1FEB3BED1DEE46CF00D96E96 /* StartupInfoViewController.swift */,
 				1FCDA6F71DEE0D21009EF15C /* StartupNow */,
 				1FCDA6F61DEE0D21009EF15C /* Products */,
 				23E5E341EB4D9AD05CC71F78 /* Pods */,
@@ -93,7 +99,7 @@
 				1FCDA6FF1DEE0D21009EF15C /* Assets.xcassets */,
 				1FCDA7011DEE0D21009EF15C /* LaunchScreen.storyboard */,
 				1FCDA7041DEE0D21009EF15C /* Info.plist */,
-				1F573CA51DEE0DDE00D9C2DA /* GoogleService-Info.plist */,
+				1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */,
 			);
 			path = StartupNow;
 			sourceTree = "<group>";
@@ -178,8 +184,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F979DFC1DF1EE13009636E4 /* GoogleService-Info.plist in Resources */,
 				1FCDA7031DEE0D21009EF15C /* LaunchScreen.storyboard in Resources */,
-				1F573CA61DEE0DDE00D9C2DA /* GoogleService-Info.plist in Resources */,
 				1FCDA7001DEE0D21009EF15C /* Assets.xcassets in Resources */,
 				1FCDA6FE1DEE0D21009EF15C /* Main.storyboard in Resources */,
 			);
@@ -242,6 +248,8 @@
 			files = (
 				1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */,
 				1FCDA6F91DEE0D21009EF15C /* AppDelegate.swift in Sources */,
+				1FEB3BEE1DEE46CF00D96E96 /* StartupInfoViewController.swift in Sources */,
+				1FAAD8821DEF33E200822310 /* Startup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
