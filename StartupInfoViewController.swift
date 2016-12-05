@@ -39,13 +39,14 @@ class StartupInfoViewController: UIViewController {
     
     func firebaseChild () {
         // Sends data from textfield to Firebase database
+
         let startupAttributes = Startup(name: startupNameTextField.text!, location: locationTextField.text!, market: marketTextField.text!, website: websiteTextField.text!, founders: foundersTextField.text!, productInfo: productTextView.text)
+        
         let startupAttributesRef = self.ref.child(startupNameTextField.text!)
         startupAttributesRef.setValue(startupAttributes.toAnyObject())
+ 
+        }
 
-    }
-
-    
     /*
     // MARK: - Navigation
 

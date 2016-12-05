@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */; };
 		1F979DFC1DF1EE13009636E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */; };
+		1F979DFE1DF4DC90009636E4 /* StartupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */; };
 		1FAAD8821DEF33E200822310 /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAAD8811DEF33E200822310 /* Startup.swift */; };
 		1FCDA6F91DEE0D21009EF15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDA6F81DEE0D21009EF15C /* AppDelegate.swift */; };
 		1FCDA6FE1DEE0D21009EF15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDA6FC1DEE0D21009EF15C /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 		1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupListTableViewController.swift; sourceTree = "<group>"; };
 		1FAAD8811DEF33E200822310 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		1FCDA6F51DEE0D21009EF15C /* StartupNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartupNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCDA6F81DEE0D21009EF15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				1F8B22161DEE1E8D00D82A76 /* Controller */,
 				1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */,
 				1FEB3BED1DEE46CF00D96E96 /* StartupInfoViewController.swift */,
+				1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */,
 				1FCDA6F71DEE0D21009EF15C /* StartupNow */,
 				1FCDA6F61DEE0D21009EF15C /* Products */,
 				23E5E341EB4D9AD05CC71F78 /* Pods */,
@@ -248,6 +251,7 @@
 			files = (
 				1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */,
 				1FCDA6F91DEE0D21009EF15C /* AppDelegate.swift in Sources */,
+				1F979DFE1DF4DC90009636E4 /* StartupListTableViewController.swift in Sources */,
 				1FEB3BEE1DEE46CF00D96E96 /* StartupInfoViewController.swift in Sources */,
 				1FAAD8821DEF33E200822310 /* Startup.swift in Sources */,
 			);
