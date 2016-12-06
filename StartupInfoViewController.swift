@@ -19,30 +19,29 @@ class StartupInfoViewController: UIViewController {
     @IBOutlet weak var foundersTextField: UITextField!
     @IBOutlet weak var productTextView: UITextView!
     
-    var ref: FIRDatabaseReference!
+    var databaseRef: FIRDatabaseReference!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ref = FIRDatabase.database().reference().child("startups")
+        databaseRef = FIRDatabase.database().reference().child("startups")
 
     }
 
     @IBAction func saveButtonPressed() {
        // TODO: Post data to Firebase
        
-        firebaseChild()
+        sendDataToFirebaseDB()
         self.dismiss(animated: true, completion: nil)
    
     }
     
-    func firebaseChild () {
+    func sendDataToFirebaseDB () {
         // Sends data from textfield to Firebase database
-
         let startupAttributes = Startup(name: startupNameTextField.text!, location: locationTextField.text!, market: marketTextField.text!, website: websiteTextField.text!, founders: foundersTextField.text!, productInfo: productTextView.text)
         
-        let startupAttributesRef = self.ref.child(startupNameTextField.text!)
+        let startupAttributesRef = self.databaseRef.child(startupNameTextField.text!)
         startupAttributesRef.setValue(startupAttributes.toAnyObject())
  
         }

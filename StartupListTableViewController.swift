@@ -7,45 +7,60 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class StartupListTableViewController: UITableViewController {
+    
+    var databaseRef: FIRDatabaseReference!
+    var startups = [Startup]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        databaseRef = FIRDatabase.database().reference().child("startups")
+        databaseRef.observe(.value, with: {snapshot in
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var newStartups: [Startup] = []
+            
+            for startup in snapshot.children {
+                
+            let newStartup = Startup(snapshot: startup as! FIRDataSnapshot)
+                newStartups.append(newStartup)
+  
+            }
+            
+            self.startups = newStartups
+            self.tableView.reloadData()
+    })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return startups.count
+
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StartupCell", for: indexPath)
+       
+        let newStartups = startups[indexPath.row]
+        
+        cell.textLabel?.text = newStartups.name
+        cell.detailTextLabel?.text = newStartups.market
 
         return cell
     }
-    */
+ 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -54,19 +69,18 @@ class StartupListTableViewController: UITableViewController {
         return true
     }
     */
-
+    
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            let newStartup = startups[indexPath.row]
+            newStartup.databaseRef?.removeValue()
+            self.tableView.reloadData()
         }    
     }
+    
     */
-
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
