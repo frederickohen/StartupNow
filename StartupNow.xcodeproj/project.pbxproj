@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F861E441DF7863800C9E5BF /* StartupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F861E431DF7863800C9E5BF /* StartupDetailViewController.swift */; };
 		1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */; };
 		1F979DFC1DF1EE13009636E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */; };
 		1F979DFE1DF4DC90009636E4 /* StartupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F861E431DF7863800C9E5BF /* StartupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupDetailViewController.swift; sourceTree = "<group>"; };
 		1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 		1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupListTableViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				1F8B22141DEE1E7100D82A76 /* InitialTableViewController.swift */,
 				1FEB3BED1DEE46CF00D96E96 /* StartupInfoViewController.swift */,
 				1F979DFD1DF4DC90009636E4 /* StartupListTableViewController.swift */,
+				1F861E431DF7863800C9E5BF /* StartupDetailViewController.swift */,
 				1FCDA6F71DEE0D21009EF15C /* StartupNow */,
 				1FCDA6F61DEE0D21009EF15C /* Products */,
 				23E5E341EB4D9AD05CC71F78 /* Pods */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8B22151DEE1E7100D82A76 /* InitialTableViewController.swift in Sources */,
+				1F861E441DF7863800C9E5BF /* StartupDetailViewController.swift in Sources */,
 				1FCDA6F91DEE0D21009EF15C /* AppDelegate.swift in Sources */,
 				1F979DFE1DF4DC90009636E4 /* StartupListTableViewController.swift in Sources */,
 				1FEB3BEE1DEE46CF00D96E96 /* StartupInfoViewController.swift in Sources */,

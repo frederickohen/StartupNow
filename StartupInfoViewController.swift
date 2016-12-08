@@ -21,7 +21,6 @@ class StartupInfoViewController: UIViewController {
     
     var databaseRef: FIRDatabaseReference!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +38,8 @@ class StartupInfoViewController: UIViewController {
     
     func sendDataToFirebaseDB () {
         // Sends data from textfield to Firebase database
+        
+        
         let startupAttributes = Startup(name: startupNameTextField.text!, location: locationTextField.text!, market: marketTextField.text!, website: websiteTextField.text!, founders: foundersTextField.text!, productInfo: productTextView.text)
         
         let startupAttributesRef = self.databaseRef.child(startupNameTextField.text!)
