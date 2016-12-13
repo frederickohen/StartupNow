@@ -26,14 +26,12 @@ class StartupListTableViewController: UITableViewController {
                 
             let newStartup = Startup(snapshot: startup as! FIRDataSnapshot)
                 newStartups.append(newStartup)
-  
-            }
+              }
             
             self.startups = newStartups
             self.tableView.reloadData()
     })
     }
-
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,10 +39,8 @@ class StartupListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return startups.count
-
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StartupCell", for: indexPath)
@@ -56,9 +52,7 @@ class StartupListTableViewController: UITableViewController {
 
         return cell
     }
- 
- 
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "DetailSegue" {
@@ -68,13 +62,6 @@ class StartupListTableViewController: UITableViewController {
             
             let startupDetailVC = segue.destination as! StartupDetailViewController
             startupDetailVC.selectedStartup = selectedStartup
-            
-            
         }
-        
-     
-
     }
-
-
 }
