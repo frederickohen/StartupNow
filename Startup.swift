@@ -59,8 +59,4 @@ struct Startup {
             "productInfo": productInfo
         ]
     }
-
 }
-
-
-

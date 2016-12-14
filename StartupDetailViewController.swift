@@ -17,6 +17,9 @@ class StartupDetailViewController: UIViewController {
     @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var productInfoLabel: UILabel!
     
+    
+    @IBOutlet weak var startupImageView: UIImageView!
+    
     var name = String ()
     var selectedStartup: Startup!
      
@@ -29,7 +32,10 @@ class StartupDetailViewController: UIViewController {
         locationLabel.text = selectedStartup.location
         websiteLabel.text = selectedStartup.website
         productInfoLabel.text = selectedStartup.productInfo
-        self.title = selectedStartup.name
+        
+        // Makes circular image view
+        startupImageView.layer.cornerRadius = startupImageView.frame.size.width/2
+        startupImageView.clipsToBounds = true
 
     }
 }

@@ -26,8 +26,6 @@ class StartupInfoViewController: UIViewController {
        // let logo = UIImage(named: "logo")
 //        let imageView = UIImageView(image: #imageLiteral(resourceName: "logo"))
 //        self.navigationItem.titleView = imageView
-        
-
         databaseRef = FIRDatabase.database().reference().child("startups")
     }
     

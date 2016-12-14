@@ -34,7 +34,7 @@ class StartupListTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,8 +49,32 @@ class StartupListTableViewController: UITableViewController {
         
         cell.textLabel?.text = newStartups.name
         cell.detailTextLabel?.text = newStartups.market
+        
 
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let shareAction = UITableViewRowAction(style: .normal, title: "Share") { (action: UITableViewRowAction, IndexPath) -> Void in
+        
+        let firstActivityItem = self.startups[indexPath.row]
+        let activityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
+            
+            self.present(activityViewController, animated: true, completion: nil)
+
+        }
+        
+        let customOrange = UIColor(red: 209/225, green: 87/225, blue: 39/225, alpha: 1)
+        shareAction.backgroundColor = customOrange
+        return[shareAction]
+     
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
