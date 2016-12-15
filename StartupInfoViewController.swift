@@ -22,10 +22,7 @@ class StartupInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       // let logo = UIImage(named: "logo")
-//        let imageView = UIImageView(image: #imageLiteral(resourceName: "logo"))
-//        self.navigationItem.titleView = imageView
+
         databaseRef = FIRDatabase.database().reference().child("startups")
     }
     
@@ -33,7 +30,12 @@ class StartupInfoViewController: UIViewController {
        // TODO: Post data to Firebase
        
         sendDataToFirebaseDB()
-        self.dismiss(animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+             self.dismiss(animated: true, completion: nil)
+        }
+        
+       
     }
     
     func sendDataToFirebaseDB () {
@@ -55,6 +57,8 @@ class StartupInfoViewController: UIViewController {
 
         let startupAttributesRef = self.databaseRef.childByAutoId()
         startupAttributesRef.setValue(startupAttributes.toAnyObject())
+        
+        
  
-        }
+    }
 }

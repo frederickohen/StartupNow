@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FWC-It-Okt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FWC-It-Okt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OC1-LY-5A9" kind="show" id="TZ0-ep-3wn"/>
+                                    <segue destination="OC1-LY-5A9" kind="show" action="showDetailViewController:sender:" id="TZ0-ep-3wn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cb-yf-BLm">
@@ -73,27 +73,24 @@
                                     <constraint firstAttribute="height" constant="100" id="gLY-pG-q7w"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gev-kP-OPe">
-                                <rect key="frame" x="0.0" y="435" width="375" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuned to you." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIS-CD-OnB">
-                                        <rect key="frame" x="37" y="8" width="158" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.89906007050000003" green="0.3747928143" blue="0.1702025831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="DC2-cz-Ly0"/>
-                                    <constraint firstAttribute="height" constant="50" id="aii-C2-mly"/>
-                                </constraints>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StartupNow" translatesAutoresizingMaskIntoConstraints="NO" id="lli-f1-dfA">
                                 <rect key="frame" x="113" y="202" width="240" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparentback" translatesAutoresizingMaskIntoConstraints="NO" id="exn-IC-OAc">
+                                <rect key="frame" x="0.0" y="431" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JDC-g0-9zx"/>
+                                    <constraint firstAttribute="width" constant="375" id="hg3-wu-V4v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuned to you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ern-lc-SBr">
+                                <rect key="frame" x="35" y="443" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,6 +98,7 @@
                             <constraint firstItem="3Cb-yf-BLm" firstAttribute="height" secondItem="dVy-xN-dJ1" secondAttribute="height" id="1WH-g9-n36"/>
                             <constraint firstItem="eEN-9X-pv0" firstAttribute="leading" secondItem="p7L-0E-DR4" secondAttribute="leadingMargin" constant="13" id="2Fw-Ch-gtg"/>
                             <constraint firstItem="DKg-f9-XHd" firstAttribute="top" secondItem="p7L-0E-DR4" secondAttribute="top" id="4Yw-gN-XQZ"/>
+                            <constraint firstItem="exn-IC-OAc" firstAttribute="leading" secondItem="p7L-0E-DR4" secondAttribute="leading" id="9UP-4R-Hhf"/>
                             <constraint firstItem="3Cb-yf-BLm" firstAttribute="width" secondItem="dVy-xN-dJ1" secondAttribute="width" id="9gN-pJ-6qB"/>
                             <constraint firstItem="onS-OM-a5t" firstAttribute="top" secondItem="p7L-0E-DR4" secondAttribute="top" constant="335" id="A3o-ah-pMH"/>
                             <constraint firstItem="2p7-Qk-Rbd" firstAttribute="top" secondItem="dVy-xN-dJ1" secondAttribute="bottom" id="BBb-5a-fHs"/>
@@ -109,11 +107,10 @@
                             <constraint firstItem="2p7-Qk-Rbd" firstAttribute="top" secondItem="DKg-f9-XHd" secondAttribute="bottom" id="CLR-86-AV4"/>
                             <constraint firstItem="DKg-f9-XHd" firstAttribute="leading" secondItem="dVy-xN-dJ1" secondAttribute="leading" id="CaP-Ix-a1f"/>
                             <constraint firstItem="DKg-f9-XHd" firstAttribute="leading" secondItem="p7L-0E-DR4" secondAttribute="leading" id="Hff-Kd-vsp"/>
-                            <constraint firstAttribute="trailing" secondItem="gev-kP-OPe" secondAttribute="trailing" id="T4v-T2-Bnp"/>
+                            <constraint firstAttribute="trailing" secondItem="exn-IC-OAc" secondAttribute="trailing" id="S3W-Kh-V22"/>
+                            <constraint firstItem="exn-IC-OAc" firstAttribute="top" secondItem="eEN-9X-pv0" secondAttribute="bottom" constant="176" id="TUa-qp-Od4"/>
                             <constraint firstAttribute="trailing" secondItem="3Cb-yf-BLm" secondAttribute="trailing" id="W5Q-6u-hNj"/>
                             <constraint firstItem="2p7-Qk-Rbd" firstAttribute="top" secondItem="3Cb-yf-BLm" secondAttribute="bottom" id="YHl-aF-Csr"/>
-                            <constraint firstItem="gev-kP-OPe" firstAttribute="top" secondItem="onS-OM-a5t" secondAttribute="bottom" id="d3i-yX-Jau"/>
-                            <constraint firstItem="gev-kP-OPe" firstAttribute="leading" secondItem="p7L-0E-DR4" secondAttribute="leading" id="e0p-iF-JoH"/>
                             <constraint firstItem="dVy-xN-dJ1" firstAttribute="leading" secondItem="p7L-0E-DR4" secondAttribute="leading" id="gVb-U4-Fjg"/>
                             <constraint firstItem="3Cb-yf-BLm" firstAttribute="leading" secondItem="dVy-xN-dJ1" secondAttribute="trailing" id="pPm-w7-P3j"/>
                             <constraint firstItem="onS-OM-a5t" firstAttribute="top" secondItem="eEN-9X-pv0" secondAttribute="bottom" constant="80" id="wlq-e2-V6K"/>
@@ -195,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-3n-cv1">
-                                <rect key="frame" x="83" y="304" width="132" height="36"/>
+                                <rect key="frame" x="83" y="304" width="246" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,9 +247,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Production information" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAu-Om-eAf">
-                                <rect key="frame" x="23" y="544" width="317" height="68"/>
+                                <rect key="frame" x="23" y="544" width="317" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -458,6 +455,7 @@
         <image name="logo" width="70" height="70"/>
         <image name="market1" width="64" height="64"/>
         <image name="name" width="64" height="64"/>
+        <image name="transparentback" width="375" height="50"/>
         <image name="website" width="64" height="64"/>
     </resources>
 </document>
