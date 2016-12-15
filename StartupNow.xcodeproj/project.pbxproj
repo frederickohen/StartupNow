@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2971131E01C1DB0068416D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2971121E01C1DB0068416D /* Social.framework */; };
 		1F861E441DF7863800C9E5BF /* StartupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F861E431DF7863800C9E5BF /* StartupDetailViewController.swift */; };
 		1F8B22151DEE1E7100D82A76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8B22141DEE1E7100D82A76 /* InitialViewController.swift */; };
 		1F979DFC1DF1EE13009636E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2971121E01C1DB0068416D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1F861E431DF7863800C9E5BF /* StartupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupDetailViewController.swift; sourceTree = "<group>"; };
 		1F8B22141DEE1E7100D82A76 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		1F979DFB1DF1EE13009636E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2971131E01C1DB0068416D /* Social.framework in Frameworks */,
 				2A9916B8CDC3DF628142F42E /* Pods_StartupNow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +125,7 @@
 		2881CB588152DB6A1339A60E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F2971121E01C1DB0068416D /* Social.framework */,
 				3A77A4CFB6E901D696287B52 /* Pods_StartupNow.framework */,
 			);
 			name = Frameworks;

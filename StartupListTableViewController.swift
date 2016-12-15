@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 import FirebaseDatabase
 
 class StartupListTableViewController: UITableViewController {
@@ -53,21 +54,31 @@ class StartupListTableViewController: UITableViewController {
 
         return cell
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+       
+        //var startups = [Startup]()
         
+
+
         let shareAction = UITableViewRowAction(style: .normal, title: "Share") { (action: UITableViewRowAction, IndexPath) -> Void in
-        
-        let firstActivityItem = self.startups[indexPath.row]
-        let activityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
+ 
+            //let newStartups = startups[indexPath.row]
+            //self.startups = [newStartups]
+            //let startupWebsite = newStartups.website
+            
+            let string: String = "Checkout this cool startup!\("www.geeoku.com") "
+
+            let firstActivityItem = self.startups[indexPath.row]
+
+            let activityViewController = UIActivityViewController(activityItems: [firstActivityItem,string], applicationActivities: nil)
             
             self.present(activityViewController, animated: true, completion: nil)
+       
 
         }
         

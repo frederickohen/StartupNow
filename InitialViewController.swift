@@ -13,7 +13,11 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      // self.navigationController?.setNavigationBarHidden(true, animated: false)
+        // Transparent navigation bar
+        let navigationBar = self.navigationController?.navigationBar
+        navigationBar?.setBackgroundImage(UIImage(), for: .default)
+        navigationBar?.shadowImage = UIImage()
+        navigationBar?.isTranslucent = true
 
     }
 
