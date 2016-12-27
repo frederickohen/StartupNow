@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class StartupInfoViewController: UIViewController {
+class StartupInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var startupNameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -17,6 +17,9 @@ class StartupInfoViewController: UIViewController {
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var foundersTextField: UITextField!
     @IBOutlet weak var productTextView: UITextView!
+    
+    
+    @IBOutlet weak var companyLogoImageView: UIImageView!
     
     var databaseRef: FIRDatabaseReference!
 
@@ -34,9 +37,27 @@ class StartupInfoViewController: UIViewController {
         DispatchQueue.main.async {
              self.dismiss(animated: true, completion: nil)
         }
-        
-       
+ 
     }
+    
+
+    @IBAction func uploadPhotoButtonPressed() {
+      
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+        
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        companyLogoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.dismiss(animated: false, completion: nil)
+        
+    }
+  
+    
     
     func sendDataToFirebaseDB () {
        
@@ -48,7 +69,7 @@ class StartupInfoViewController: UIViewController {
             
             present(alertController, animated: true, completion: nil)
         } else {
-            print("**************error*************")
+            print("Text field entry satisfied")
         }
         
         // Sends data from textfield to Firebase database
@@ -57,8 +78,6 @@ class StartupInfoViewController: UIViewController {
 
         let startupAttributesRef = self.databaseRef.childByAutoId()
         startupAttributesRef.setValue(startupAttributes.toAnyObject())
-        
-        
- 
+
     }
 }

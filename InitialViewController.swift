@@ -9,9 +9,7 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
-  
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +18,6 @@ class InitialViewController: UIViewController {
         navBar?.setBackgroundImage(UIImage(), for: .default)
         navBar?.shadowImage = UIImage()
         navBar?.isTranslucent = true
-        
 
     }
-
 }
