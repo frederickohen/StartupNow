@@ -7,89 +7,92 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class StartupListTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  
+  var databaseRef: FIRDatabaseReference!
+  var startups = [Startup]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    databaseRef = FIRDatabase.database().reference().child("startups")
+    databaseRef.observe(.value, with: {snapshot in
+      
+      var newStartups: [Startup] = []
+      
+      for startup in snapshot.children {
+        
+        let newStartup = Startup(snapshot: startup as! FIRDataSnapshot)
+        newStartups.append(newStartup)
+      }
+      
+      self.startups = newStartups
+      self.tableView.reloadData()
+    })
+  }
+  
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return startups.count
+  }
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: "StartupCell", for: indexPath)
+    
+    let newStartups = startups[indexPath.row]
+    
+    cell.textLabel?.text = newStartups.name
+    cell.detailTextLabel?.text = newStartups.market
+    
+    
+    return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    
+  }
+  
+  override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    
+    
+    let newStartups = startups[indexPath.row]
+    
+    let shareAction = UITableViewRowAction(style: .normal, title: "Share") { (action: UITableViewRowAction, IndexPath) -> Void in
+      
+      
+      let startupWebsite = newStartups.website
+      let startupLocation = newStartups.location
+      
+      let string: String = "Checkout this cool startup in \(startupLocation)!  \(startupWebsite)"
+      
+      let firstActivityItem = self.startups[indexPath.row]
+      
+      let activityViewController = UIActivityViewController(activityItems: [firstActivityItem,string], applicationActivities: nil)
+      
+      self.present(activityViewController, animated: true, completion: nil)
+      
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    let customOrange = UIColor(red: 209/225, green: 87/225, blue: 39/225, alpha: 1)
+    shareAction.backgroundColor = customOrange
+    return[shareAction]
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "DetailSegue" {
+      let indexPath = tableView.indexPathForSelectedRow
+      let selectedRowIndex = (indexPath?.row)
+      let selectedStartup = startups[selectedRowIndex!]
+      
+      let startupDetailVC = segue.destination as! StartupDetailViewController
+      startupDetailVC.selectedStartup = selectedStartup
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
 }
