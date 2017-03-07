@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseDatabase
 
-
 struct Startup {
   
   let name: String

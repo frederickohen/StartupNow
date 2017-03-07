@@ -36,4 +36,5 @@ class StartupDetailViewController: UIViewController {
     startupImageView.clipsToBounds = true
     
   }
+  
 }

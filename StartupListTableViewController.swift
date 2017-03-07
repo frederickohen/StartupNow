@@ -44,12 +44,9 @@ class StartupListTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "StartupCell", for: indexPath)
-    
     let newStartups = startups[indexPath.row]
-    
     cell.textLabel?.text = newStartups.name
     cell.detailTextLabel?.text = newStartups.market
-    
     
     return cell
   }
@@ -59,16 +56,12 @@ class StartupListTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    
-    
     let newStartups = startups[indexPath.row]
     
     let shareAction = UITableViewRowAction(style: .normal, title: "Share") { (action: UITableViewRowAction, IndexPath) -> Void in
       
-      
       let startupWebsite = newStartups.website
       let startupLocation = newStartups.location
-      
       let string: String = "Checkout this cool startup in \(startupLocation)!  \(startupWebsite)"
       
       let firstActivityItem = self.startups[indexPath.row]
@@ -76,7 +69,6 @@ class StartupListTableViewController: UITableViewController {
       let activityViewController = UIActivityViewController(activityItems: [firstActivityItem,string], applicationActivities: nil)
       
       self.present(activityViewController, animated: true, completion: nil)
-      
     }
     
     let customOrange = UIColor(red: 209/225, green: 87/225, blue: 39/225, alpha: 1)
@@ -85,7 +77,6 @@ class StartupListTableViewController: UITableViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
     if segue.identifier == "DetailSegue" {
       let indexPath = tableView.indexPathForSelectedRow
       let selectedRowIndex = (indexPath?.row)

@@ -17,8 +17,6 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
   @IBOutlet weak var websiteTextField: UITextField!
   @IBOutlet weak var foundersTextField: UITextField!
   @IBOutlet weak var productTextView: UITextView!
-  
-  
   @IBOutlet weak var startupLogoImageView: UIImageView!
   
   var databaseRef: FIRDatabaseReference!
@@ -35,7 +33,6 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
     DispatchQueue.main.async {
       self.dismiss(animated: true, completion: nil)
     }
-    
   }
   
   @IBAction func uploadPhotoButtonPressed() {
@@ -43,41 +40,38 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
     let imagePicker = UIImagePickerController()
     imagePicker.delegate = self
     imagePicker.sourceType = .photoLibrary
-    // imagePicker.allowsEditing = true
+    imagePicker.allowsEditing = true
     self.present(imagePicker, animated: true, completion: nil)
+    print("Photo button pressed")
     
   }
+  
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     
     let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    self.startupLogoImageView.image = image
-    
-    
-    //        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-    //            startupLogoImageView.image = image
-    //        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-    //            startupLogoImageView.image = image
-    //        } else {
-    //            startupLogoImageView.image = nil
-    //        }
+      self.startupLogoImageView.image = image
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+                startupLogoImageView.image = image
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                startupLogoImageView.image = image
+          } else {
+                startupLogoImageView.image = nil
+            }
     self.dismiss(animated: false, completion: nil)
   }
   
-  
-  //    func uploadImageToFirebaseStorage(data: Data) {
-  //
-  //        let storageRef = FIRStorage.storage().reference(withPath: "startupLogos/demoPic.jpg")
-  //        let uploadMetadata = FIRStorageMetadata()
-  //        uploadMetadata.contentType = "image/jpeg"
-  //        storageRef.put(data as Data, metadata: uploadMetadata) { (metadata, error) in
-  //            if (error != nil) {
-  //                print("I received an error! \(error?.localizedDescription)")
-  //            } else {
-  //                print("Upload complete! Here's some metadata!\(metadata)")
-  //            }
-  //        }
-  //    }
-  
+//  func uploadImageToFirebaseStorage(data: Data) {
+//      let storageRef = FIRStorage.storage().reference(withPath: "startupLogos/demoPic.jpg")
+//      let uploadMetadata = FIRStorageMetadata()
+//        uploadMetadata.contentType = "image/jpeg"
+//          storageRef.put(data as Data, metadata: uploadMetadata) { (metadata, error) in
+//              if (error != nil) {
+//                  print("I received an error! \(error?.localizedDescription)")
+//              } else {
+//                  print("Upload complete! Here's some metadata!\(metadata)")
+//              }
+//          }
+//      }
   func sendDataToFirebaseDB () {
     
     if (startupNameTextField.text?.isEmpty)!  {
