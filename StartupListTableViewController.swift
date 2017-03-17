@@ -27,7 +27,6 @@ class StartupListTableViewController: UITableViewController {
         let newStartup = Startup(snapshot: startup as! FIRDataSnapshot)
         newStartups.append(newStartup)
       }
-      
       self.startups = newStartups
       self.tableView.reloadData()
     })
@@ -81,7 +80,6 @@ class StartupListTableViewController: UITableViewController {
       let indexPath = tableView.indexPathForSelectedRow
       let selectedRowIndex = (indexPath?.row)
       let selectedStartup = startups[selectedRowIndex!]
-      
       let startupDetailVC = segue.destination as! StartupDetailViewController
       startupDetailVC.selectedStartup = selectedStartup
     }

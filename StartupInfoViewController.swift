@@ -28,7 +28,7 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
   }
   
   @IBAction func saveButtonPressed() {
-    // TODO: Post data to Firebase
+
     sendDataToFirebaseDB()
     self.dismiss(animated: true, completion: nil)
   }
@@ -57,19 +57,7 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
             }
     self.dismiss(animated: false, completion: nil)
   }
-  
-//  func uploadImageToFirebaseStorage(data: Data) {
-//      let storageRef = FIRStorage.storage().reference(withPath: "startupLogos/demoPic.jpg")
-//      let uploadMetadata = FIRStorageMetadata()
-//        uploadMetadata.contentType = "image/jpeg"
-//          storageRef.put(data as Data, metadata: uploadMetadata) { (metadata, error) in
-//              if (error != nil) {
-//                  print("I received an error! \(error?.localizedDescription)")
-//              } else {
-//                  print("Upload complete! Here's some metadata!\(metadata)")
-//              }
-//          }
-//      }
+
   func sendDataToFirebaseDB () {
     
     if (startupNameTextField.text?.isEmpty)!  {
@@ -80,10 +68,8 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
       
       present(alertController, animated: true, completion: nil)
     } else {
-      print("Text field entry satisfied")
+      print("Text field entries satisfied")
     }
-    
-    // Sends data from textfield to Firebase database
     
     let startupAttributes = Startup(name: startupNameTextField.text!, location: locationTextField.text!, market: marketTextField.text!, website: websiteTextField.text!, founders: foundersTextField.text!, productInfo: productTextView.text)
     
