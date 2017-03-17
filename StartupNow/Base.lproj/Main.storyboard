@@ -36,7 +36,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OC1-LY-5A9" kind="showDetail" action="showViewController:sender:" id="tBO-ks-ZYc"/>
+                                    <segue destination="OC1-LY-5A9" kind="presentation" id="tBO-ks-ZYc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cb-yf-BLm">

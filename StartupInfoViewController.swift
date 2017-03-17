@@ -30,9 +30,7 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
   @IBAction func saveButtonPressed() {
     // TODO: Post data to Firebase
     sendDataToFirebaseDB()
-    DispatchQueue.main.async {
-      self.dismiss(animated: true, completion: nil)
-    }
+    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func uploadPhotoButtonPressed() {
