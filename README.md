@@ -15,7 +15,7 @@ Making startups more consumer friendly. StartupNow is a social networking platfo
 
 
 
-#LICENSE
+# LICENSE
 LICENSE
 
 The MIT License (MIT)
