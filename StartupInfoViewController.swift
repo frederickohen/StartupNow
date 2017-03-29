@@ -25,11 +25,13 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
     super.viewDidLoad()
     
     databaseRef = FIRDatabase.database().reference().child("startups")
+    
   }
   
   @IBAction func saveButtonPressed() {
 
-    sendDataToFirebaseDB()
+    //sendDataToFirebaseDB()
+     sendDataToFirebaseDatabase()
     self.dismiss(animated: true, completion: nil)
   }
   
@@ -75,6 +77,38 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
     
     let startupAttributesRef = self.databaseRef.childByAutoId()
     startupAttributesRef.setValue(startupAttributes.toAnyObject())
+    
+  }
+  
+  func sendDataToFirebaseDatabase() {
+    guard let startupName = startupNameTextField.text else {
+      return
+    }
+    guard let startupLocation = locationTextField.text else {
+      return
+    }
+    
+    guard let startupMarket = marketTextField.text else {
+      return
+    }
+    guard let startupWebsite = websiteTextField.text else {
+      return
+    }
+    
+    guard let startupFounders = foundersTextField.text else {
+      return
+    }
+    
+    guard let startupProduct = productTextView.text else {
+      return
+    }
+    
+    func sendToServer(name: String, location: String, market: String, website: String, founders: String, product: String) {
+      sendToServer(name: startupName, location: startupLocation, market: startupMarket, website: startupWebsite, founders: startupFounders, product: startupProduct)
+      
+    }
+    let startupAttributesRef = self.databaseRef.childByAutoId()
+    startupAttributesRef.setValue(sendToServer(name: startupName, location: startupLocation, market: startupMarket, website: startupWebsite, founders: startupFounders, product: startupProduct))
     
   }
 }
