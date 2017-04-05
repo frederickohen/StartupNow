@@ -82,25 +82,32 @@ class StartupInfoViewController: UIViewController, UIImagePickerControllerDelega
   
   func sendDataToFirebaseDatabase() {
     guard let startupName = startupNameTextField.text else {
+      print("Startup name entry empty")
       return
     }
     guard let startupLocation = locationTextField.text else {
+      print("Location name entry empty")
       return
     }
     
     guard let startupMarket = marketTextField.text else {
+      print("Market name entry empty")
       return
     }
     guard let startupWebsite = websiteTextField.text else {
+      print("Website name entry empty")
       return
     }
     
     guard let startupFounders = foundersTextField.text else {
+      print("Founders name entry empty")
       return
     }
     
     guard let startupProduct = productTextView.text else {
+      print("Product name entry empty")
       return
+      
     }
     
     func sendToServer(name: String, location: String, market: String, website: String, founders: String, product: String) {
